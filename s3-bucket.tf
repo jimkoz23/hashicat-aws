@@ -1,36 +1,6 @@
-//--------------------------------------------------------------------
-// Variables
-variable "s3_bucket_acceleration_status" {}
-variable "s3_bucket_acl" {}
-variable "s3_bucket_attach_elb_log_delivery_policy" {}
-variable "s3_bucket_attach_policy" {}
-variable "s3_bucket_attach_public_policy" {}
-variable "s3_bucket_block_public_acls" {}
-variable "s3_bucket_block_public_policy" {}
-variable "s3_bucket_bucket_prefix" {}
-variable "s3_bucket_cors_rule" {}
-variable "s3_bucket_create_bucket" {}
-variable "s3_bucket_force_destroy" {}
-variable "s3_bucket_grant" {}
-variable "s3_bucket_ignore_public_acls" {}
-variable "s3_bucket_lifecycle_rule" {}
-variable "s3_bucket_logging" {}
-variable "s3_bucket_object_lock_configuration" {}
-variable "s3_bucket_policy" {}
-variable "s3_bucket_replication_configuration" {}
-variable "s3_bucket_request_payer" {}
-variable "s3_bucket_restrict_public_buckets" {}
-variable "s3_bucket_server_side_encryption_configuration" {}
-variable "s3_bucket_tags" {}
-variable "s3_bucket_versioning" {}
-variable "s3_bucket_website" {}
-
-//--------------------------------------------------------------------
-// Modules
-module "s3_bucket" {
+module "s3-bucket" {
   source  = "app.terraform.io/PUB-jk23/s3-bucket/aws"
   version = "1.15.0"
-
   acceleration_status = "${var.s3_bucket_acceleration_status}"
   acl = "${var.s3_bucket_acl}"
   attach_elb_log_delivery_policy = "${var.s3_bucket_attach_elb_log_delivery_policy}"
@@ -56,3 +26,4 @@ module "s3_bucket" {
   tags = "${var.s3_bucket_tags}"
   versioning = "${var.s3_bucket_versioning}"
   website = "${var.s3_bucket_website}"
+}
